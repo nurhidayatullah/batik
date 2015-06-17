@@ -44,6 +44,7 @@ class Admin extends CI_Controller {
 					$user['first_name'] = $data['first_name'];
 					$user['last_name'] = $data['last_name'];
 					$user['email'] = $data['email'];
+					$user['nama_group'] = $data['nama_group'];
 					$user['password'] = $data['password'];
 					$user['kode_group'] = $data['kode_group'];
 				}

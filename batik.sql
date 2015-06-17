@@ -28,11 +28,11 @@ CREATE TABLE `batik` (
   `create_at` datetime DEFAULT NULL,
   `update_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id_batik`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 /*Data for the table `batik` */
 
-insert  into `batik`(`id_batik`,`nama_batik`,`keterangan`,`foto`,`create_at`,`update_at`) values (1,'Pekalongan','<p>tes</p>',NULL,'2015-06-04 08:37:50','2015-06-05 04:21:27'),(3,'tes batik','<p>tes keterangan batik</p>\r\n\r\n<ol>\r\n <li>mdfdkfj,jdfdf</li>\r\n <li>jmdsodms,ds</li>\r\n <li>sdhmsidh,sd</li>\r\n <li>dfhndkfnhdmf md</li>\r\n <li>fmsdkl,jlskd</li>\r\n</ol>','Free-Wallpaper-Nature-Scenes.jpg','2015-06-04 12:43:26','2015-06-04 12:57:30');
+insert  into `batik`(`id_batik`,`nama_batik`,`keterangan`,`foto`,`create_at`,`update_at`) values (1,'Pekalongan','<p>tes</p>',NULL,'2015-06-04 08:37:50','2015-06-05 04:21:27'),(3,'tes batik','<p>tes keterangan batik</p>\r\n\r\n<ol>\r\n <li>mdfdkfj,jdfdf</li>\r\n <li>jmdsodms,ds</li>\r\n <li>sdhmsidh,sd</li>\r\n <li>dfhndkfnhdmf md</li>\r\n <li>fmsdkl,jlskd</li>\r\n</ol>','Free-Wallpaper-Nature-Scenes.jpg','2015-06-04 12:43:26','2015-06-04 12:57:30'),(4,'batik 3','<p>keterangan batik 3</p>','4-Nature+Wallpapers+2014-1.jpg','2015-06-07 06:33:11',NULL),(5,'batik 4','<p>keterangan batik 4</p>','1504839.jpg','2015-06-07 06:55:11',NULL),(6,'batik 5','<p>kwterangan batik 5</p>','bg_(2).jpg','2015-06-07 06:15:23',NULL),(7,'batik 6','<p>keterangan batik 6</p>','bg.jpg','2015-06-07 06:38:23',NULL),(8,'batik 7','','Chrysanthemum.jpg','2015-06-07 06:41:27',NULL),(9,'batik 8','','clouds-with-green-nature-1920x1080.jpg','2015-06-07 06:00:28',NULL),(10,'batik 9','','Desert.jpg','2015-06-07 06:22:28',NULL),(11,'batik 10','','Green-Nature-Wallpaper-Green.jpg','2015-06-07 06:47:28',NULL);
 
 /*Table structure for table `customers` */
 
@@ -82,11 +82,11 @@ CREATE TABLE `menu` (
   `create_at` datetime DEFAULT NULL,
   `update_at` datetime DEFAULT NULL,
   PRIMARY KEY (`kode_menu`)
-) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=latin1;
 
 /*Data for the table `menu` */
 
-insert  into `menu`(`kode_menu`,`nama_menu`,`controller`,`kode_parent`,`create_at`,`update_at`) values (17,'Menu Admin','',0,'2015-05-06 02:37:41','2015-05-08 02:37:59'),(18,'Master Menu','admin/menu/index',17,'2015-05-06 02:05:42',NULL),(20,'Master Group','admin/group/index',17,'2015-05-06 02:27:43',NULL),(21,'Master User','admin/user/index',17,'2015-05-06 02:47:43',NULL),(28,'Data Master','',0,'2015-06-04 05:11:26',NULL),(29,'Customers','batik/customers/index',28,'2015-06-04 05:53:26','2015-06-04 05:00:34'),(30,'Batik','batik/batik/index',28,'2015-06-04 05:28:27',NULL),(31,'Transaksi','',0,'2015-06-05 03:11:14',NULL),(32,'Transaksi','batik/transaksi/index',31,'2015-06-05 03:46:14',NULL);
+insert  into `menu`(`kode_menu`,`nama_menu`,`controller`,`kode_parent`,`create_at`,`update_at`) values (17,'Menu Admin','',0,'2015-05-06 02:37:41','2015-05-08 02:37:59'),(18,'Master Menu','admin/menu/index',17,'2015-05-06 02:05:42',NULL),(20,'Master Group','admin/group/index',17,'2015-05-06 02:27:43',NULL),(21,'Master User','admin/user/index',17,'2015-05-06 02:47:43',NULL),(28,'Data Master','',0,'2015-06-04 05:11:26',NULL),(29,'Customers','batik/customers/index',28,'2015-06-04 05:53:26','2015-06-04 05:00:34'),(30,'Batik','batik/batik/index',28,'2015-06-04 05:28:27',NULL),(31,'Transaksi','',0,'2015-06-05 03:11:14',NULL),(32,'Transaksi','batik/transaksi/index',31,'2015-06-05 03:46:14',NULL),(33,'Galery','batik/batik/galery',31,'2015-06-07 02:48:41',NULL);
 
 /*Table structure for table `role` */
 
@@ -107,11 +107,11 @@ CREATE TABLE `role` (
   KEY `FK_role_menu` (`kode_menu`),
   CONSTRAINT `FK_role_group` FOREIGN KEY (`kode_group`) REFERENCES `group_user` (`kode_group`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_role_menu` FOREIGN KEY (`kode_menu`) REFERENCES `menu` (`kode_menu`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=65 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=67 DEFAULT CHARSET=latin1;
 
 /*Data for the table `role` */
 
-insert  into `role`(`kode_role`,`kode_group`,`kode_menu`,`view`,`itambah`,`iupdate`,`idelete`,`create_at`,`update_at`) values (1,1,17,1,0,0,0,'2015-05-06 02:37:41','2015-05-21 05:57:55'),(5,1,18,0,0,0,0,'2015-05-06 02:06:42','2015-06-05 03:14:15'),(13,1,20,1,1,1,1,'2015-05-06 02:27:43','2015-05-07 17:39:45'),(17,1,21,1,1,1,1,'2015-05-06 02:47:43','2015-05-07 17:21:38'),(28,2,17,0,0,0,0,'2015-05-14 17:43:43','2015-05-21 06:32:15'),(29,2,18,0,0,0,0,'2015-05-14 17:43:43',NULL),(31,2,20,0,0,0,0,'2015-05-14 17:43:43',NULL),(32,2,21,0,0,0,0,'2015-05-14 17:43:43',NULL),(53,1,28,1,0,0,0,'2015-06-04 05:11:26','2015-06-04 05:11:28'),(54,2,28,0,0,0,0,'2015-06-04 05:11:26',NULL),(56,1,29,1,1,1,0,'2015-06-04 05:53:26','2015-06-06 08:22:04'),(57,2,29,0,0,0,0,'2015-06-04 05:53:26',NULL),(59,1,30,1,1,1,1,'2015-06-04 05:28:27','2015-06-04 05:20:28'),(60,2,30,0,0,0,0,'2015-06-04 05:28:27',NULL),(61,1,31,1,0,0,0,'2015-06-05 03:11:14','2015-06-05 03:16:15'),(62,2,31,0,0,0,0,'2015-06-05 03:11:14',NULL),(63,1,32,1,1,1,1,'2015-06-05 03:46:14','2015-06-05 03:22:15'),(64,2,32,0,0,0,0,'2015-06-05 03:46:14',NULL);
+insert  into `role`(`kode_role`,`kode_group`,`kode_menu`,`view`,`itambah`,`iupdate`,`idelete`,`create_at`,`update_at`) values (1,1,17,1,0,0,0,'2015-05-06 02:37:41','2015-05-21 05:57:55'),(5,1,18,0,0,0,0,'2015-05-06 02:06:42','2015-06-07 02:35:42'),(13,1,20,1,1,1,1,'2015-05-06 02:27:43','2015-05-07 17:39:45'),(17,1,21,1,1,1,1,'2015-05-06 02:47:43','2015-05-07 17:21:38'),(28,2,17,0,0,0,0,'2015-05-14 17:43:43','2015-05-21 06:32:15'),(29,2,18,0,0,0,0,'2015-05-14 17:43:43',NULL),(31,2,20,0,0,0,0,'2015-05-14 17:43:43',NULL),(32,2,21,0,0,0,0,'2015-05-14 17:43:43',NULL),(53,1,28,1,0,0,0,'2015-06-04 05:11:26','2015-06-04 05:11:28'),(54,2,28,0,0,0,0,'2015-06-04 05:11:26',NULL),(56,1,29,1,1,1,0,'2015-06-04 05:53:26','2015-06-06 08:22:04'),(57,2,29,0,0,0,0,'2015-06-04 05:53:26',NULL),(59,1,30,1,1,1,1,'2015-06-04 05:28:27','2015-06-04 05:20:28'),(60,2,30,0,0,0,0,'2015-06-04 05:28:27',NULL),(61,1,31,1,0,0,0,'2015-06-05 03:11:14','2015-06-05 03:16:15'),(62,2,31,0,0,0,0,'2015-06-05 03:11:14',NULL),(63,1,32,1,1,1,1,'2015-06-05 03:46:14','2015-06-05 03:22:15'),(64,2,32,0,0,0,0,'2015-06-05 03:46:14',NULL),(65,1,33,1,0,0,0,'2015-06-07 02:48:41','2015-06-07 02:15:42'),(66,2,33,0,0,0,0,'2015-06-07 02:48:41',NULL);
 
 /*Table structure for table `transaksi` */
 

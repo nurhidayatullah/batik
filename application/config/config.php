@@ -21,8 +21,8 @@ function __autoload($class)
 		@include_once( APPPATH . 'core/'. $class . EXT );
 	}
 }
-$config['base_url']	= 'http://localhost:8080/batik/index.php';
-$config['theme_url']    ='http://localhost:8080/batik/assets/';
+$config['base_url']	= 'http://localhost/batik/';
+$config['theme_url']    ='http://localhost/batik/assets/';
 $config['app'] = "APLIKASI BATIK";
 $config['copyright'] = "2015 &copy; Nur Hidayatullah - Universitas Bhayangkara Surabaya";
 /*
@@ -35,7 +35,7 @@ $config['copyright'] = "2015 &copy; Nur Hidayatullah - Universitas Bhayangkara S
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 $config['modules_locations'] = array( APPPATH.'modules/' => '../modules/', );
 /*
 |--------------------------------------------------------------------------

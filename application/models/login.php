@@ -11,10 +11,12 @@ class Login extends CI_Model {
 		}
 	}
 	function do_login($data){
-		$this->db->where('email',$data['email']);
-		$this->db->where('password',$data['password']);
-		$this->db->where('active',1);
-		$user = $this->db->get('user');
+		$this->db->select('a.*,b.nama_group');
+		$this->db->where('a.email',$data['email']);
+		$this->db->where('a.password',$data['password']);
+		$this->db->where('a.active',1);
+		$this->db->join('group_user as b','a.kode_group=b.kode_group');
+		$user = $this->db->get('user as a');
 		if($user->num_rows() ==1){
 			return $user->result_array();
 		}
